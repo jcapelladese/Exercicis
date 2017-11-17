@@ -1,0 +1,10 @@
+Fes un programa que simuli la comanda wc. 
+Volem obtenir el número de caràcters, el número de línias, el número de paraules i el número de bytes per cada fitxer donat.
+El nostre programa ha d'acceptar diferentes opcions:
+	-l line
+	-c caràcters
+	-b bytes
+	-w paraules
+Si executem el programa sense parámetres ens mostrarà tota la informació. 
+
+

@@ -1,0 +1,24 @@
+Donat el següent fitxer 20mm-box.gcode, que conté les ordres necessàries per imprimir una pesa en les 3 dimensions.
+En el fitxer trobarem líneas similars a les següents: 
+G21 ; unidades en milímetros
+G28 ; Posición 0 de todos los ejes
+G90 ; usamos coordenadas absolutas
+G1 Z0.550 F4800.000
+G1 X72.905 Y75.749 F4800.000
+G1 E1.00000 F1800.000
+G1 X74.658 Y74.267 E1.03612 F1080.000
+G1 X76.811 Y73.472 E1.07224
+
+
+El que volem serà calcular el cost de plàstic per a realitzar la pesa així com la distància recorreguda.
+Aquesta informació l'obtindrem de les següents instruccions de codi G 
+G1
+    G1 X0 Y0 Z5         - Mou a la posición 0, 0, 5.
+    G1 X5 Y5 F3000      - Mou a X5 Y5 a velocitat F3000 (3000 mm / min).
+    G1 X5 Y5 E5 F3000   - Mou a X5 Y5 a velocitat F3000 (3000 mm / min) expulsant 5mm de material.
+    
+Com a resultat de l'execució del programa volem un fitxer de sortida que contingui, la distancia en cm (en X i Y)i el cost en euros del plàstic, sabem que el volum del plàstic que utilitzem és de 960cm3/kg, i que cada Kg te un cost de 16 euros. El gruix del nostre plàstic es de 3mm^2.
+El fitxer de sortida s'ha de dir cost_total. 
+
+Els moviments en Z els podem obviar.
+La distancia entre dos punts serà d=sqrt((x2-x1)^2+(y2-y1)^2)

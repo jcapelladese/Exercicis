@@ -1,0 +1,9 @@
+Dado un fichero gpx que contiene una ruta gps, calcular la distancia total de la ruta.
+La información de cada punto viene en una etiqueta <trkpt lat="42.802834" lon="-5.129485">
+
+
+Dados el radio de la tierra 6372.8, y dos puntos gps, P1(lat1,lon1) y P2(lat2,lon2) conseguiremos la distancia entre esos dos puntos mediante la fórmula de haversine:
+
+asin(sqrt(sin((lat2-lat1) / 2)^2 + sin((lon2-lon1) / 2)^2 * cos(lat1) * cos(lat2)))*Radio de la tierra
+
+
